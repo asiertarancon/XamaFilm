@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.DetailEpisodeView">
+    <FlexLayout Direction="Column" AlignItems="Center" AlignContent="SpaceEvenly">
+        <Image x:Name="Image" Source="{Binding Episode.Poster}"/>
+        <Label x:Name="TitleLabel" FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Episode.Title}"/>
+        <Label x:Name="ReleasedLabel" Text="{Binding Episode.Released}"/>
+        <Label x:Name="RuntimeLabel" Text="{Binding Episode.Runtime}"/>
+        <Label x:Name="GenreLabel" Text="{Binding Episode.Genre}"/>
+        <Label x:Name="DirectorLabel" Text="{Binding Episode.Director}"/>
+        <Label x:Name="ActorsLabel" LineBreakMode="WordWrap" Text="{Binding Episode.Actors}"/>
+        <Label x:Name="AwardsLabel" LineBreakMode="WordWrap" Text="{Binding Episode.Awards}"/>
+        <Label x:Name="PlotLabel" LineBreakMode="WordWrap" Text="{Binding Episode.Plot}"/>
+    </FlexLayout>
+</ContentPage>

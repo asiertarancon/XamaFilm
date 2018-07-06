@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.DetailSeasonSerieView"
+             xmlns:behavior="clr-namespace:XamaFilm.Behaviors">
+    
+    <ListView ItemsSource="{Binding Season.Episodes}" HasUnevenRows="True"
+              behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding ItemSelectedCommand}">
+        <ListView.Header>
+            <FlexLayout Direction="Column" AlignItems="Center" AlignContent="SpaceEvenly">
+                <Label x:Name="TitleLabel" FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Season.Title}"/>
+                <Label x:Name="SeasonLabel" Text="{Binding Season.SeasonNumber, StringFormat='Season {0}'}" FontSize="Large"/>
+                <Label x:Name="TotalSeasonsLabel" Text="{Binding Season.TotalSeasons}"/>
+                <Label x:Name="EpisodesLabel"/>
+                <!-- Lista de episodios -->
+            </FlexLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="10,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="{Binding Title}" FontSize="Medium"/>
+                        <Label Grid.Row="1" Text="{Binding Episode, StringFormat='Episode {0}'}"/>
+                        <Label Grid.Row="2" Text="{Binding Released}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

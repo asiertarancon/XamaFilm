@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="XamaFilm.Views.DetailSerieView"
+            xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+            xmlns:behavior="clr-namespace:XamaFilm.Behaviors">
+    <ContentPage Title="Details">
+        <FlexLayout Direction="Column" AlignItems="Center" AlignContent="SpaceEvenly">
+            <Image x:Name="Image" Source="{Binding Serie.Poster}"/>
+            <Label x:Name="TitleLabel" FontSize="Large" HorizontalTextAlignment="Center" Text="{Binding Serie.Title}"/>
+            <Label x:Name="ReleasedLabel" Text="{Binding Serie.Released}"/>
+            <Label x:Name="RuntimeLabel" Text="{Binding Serie.Runtime}"/>
+            <Label x:Name="GenreLabel" Text="{Binding Serie.Genre}"/>
+            <Label x:Name="DirectorLabel" Text="{Binding Serie.Director}"/>
+            <Label x:Name="ActorsLabel" LineBreakMode="WordWrap" Text="{Binding Serie.Actors}"/>
+            <Label x:Name="AwardsLabel" LineBreakMode="WordWrap" Text="{Binding Serie.Awards}"/>
+            <Label x:Name="PlotLabel" LineBreakMode="WordWrap" Text="{Binding Serie.Plot}"/>
+        </FlexLayout>
+    </ContentPage>
+
+    <ContentPage Title="Seasons">
+        <!-- Lista de temporadas -->
+        <ListView ItemsSource="{Binding Serie.Seasons}" HasUnevenRows="True"
+                  behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding ItemSelectedCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:SeasonItemTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>

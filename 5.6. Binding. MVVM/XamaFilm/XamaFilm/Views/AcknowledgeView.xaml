@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.AcknowledgeView">
+    <StackLayout Orientation="Vertical" Spacing="0" Margin="5,10,5,10">
+        <Label Text="Json.NET" FontSize="Small"/>
+        <Label Text="The MIT License" FontSize="Micro" TextColor="#2287CA"/>
+
+        <Label Text="Xamarin Forms" FontSize="Small"/>
+        <Label Text="The MIT License" FontSize="Micro" TextColor="#2287CA"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+            x:Class="XamaFilm.Views.HomeView"
+            xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+            xmlns:behavior="clr-namespace:XamaFilm.Behaviors">
+
+    <ContentPage Title="Movies" Icon="Movie.png">
+        <ListView ItemsSource="{Binding Movies}" HasUnevenRows="True"
+                  behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding MovieItemSelectedCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:MovieItemTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+
+    <ContentPage Title="Series" Icon="Serie.png">
+        <ListView ItemsSource="{Binding Series}" HasUnevenRows="True"
+                  behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding SerieItemSelectedCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:SerieItemTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+    
+</TabbedPage>
