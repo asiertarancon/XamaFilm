@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.Templates.MovieItemTemplate">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/> 
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.RowSpan="3" Source="{Binding Poster}" HeightRequest="120" WidthRequest="80"/>
+        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Year}" TextColor="Gray"/>
+        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Title}" LineBreakMode="WordWrap" FontSize="Medium"/>
+        <Label Grid.Column="1" Grid.Row="2" Text="{Binding Genre}"/>
+        <Label Grid.Column="2" Grid.RowSpan="3" Text="{Binding ImdbRating}" VerticalTextAlignment="Center" FontSize="Large" TextColor="{Binding ImdbRating, Converter={StaticResource RatingToColorConverter}}"/>
+    </Grid>
+</ContentView>
