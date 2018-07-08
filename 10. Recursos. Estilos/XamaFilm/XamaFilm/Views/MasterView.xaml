@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.MasterView"
+             xmlns:views="clr-namespace:XamaFilm.Views">
+    <MasterDetailPage.Master>
+        <views:MenuView x:Name="MenuView" BindingContext="{Binding MenuViewModel}"/>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage BackgroundColor="Transparent" />
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

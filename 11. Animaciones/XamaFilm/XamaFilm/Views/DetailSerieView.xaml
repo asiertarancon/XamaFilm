@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="XamaFilm.Views.DetailSerieView"
+            xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+            xmlns:behavior="clr-namespace:XamaFilm.Behaviors"
+            Title="Detail of serie"
+            >
+    <ContentPage Title="Details">
+        <templates:DetailTemplate />
+    </ContentPage>
+
+    <ContentPage Title="Seasons">
+        <!-- Lista de temporadas -->
+        <ListView ItemsSource="{Binding Item.Seasons}" HasUnevenRows="True"
+                  behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding ItemSelectedCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:SeasonItemTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>

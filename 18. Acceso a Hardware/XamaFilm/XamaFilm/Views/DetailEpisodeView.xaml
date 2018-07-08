@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.DetailEpisodeView"
+             xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+             xmlns:i18n="clr-namespace:XamaFilm.Strings"
+             Title="{i18n:Translate DetailEpisode}">
+    <templates:DetailTemplate/>
+</ContentPage>

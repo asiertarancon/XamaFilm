@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.DetailMovieView"
+             xmlns:i18n="clr-namespace:XamaFilm.Strings"
+             Title="{i18n:Translate DetailMovie}"
+             xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+             xmlns:behaviors="clr-namespace:XamaFilm.Behaviors"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="favorites_menu.png" Command="{Binding FavoriteCommand}"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <templates:DetailTemplate />
+        <maps:Map x:Name="map" HeightRequest="200">
+            <maps:Map.Behaviors>
+                <behaviors:MapBehavior ItemSource="{Binding Item}" />
+            </maps:Map.Behaviors>
+        </maps:Map>
+    </StackLayout>
+</ContentPage>
+

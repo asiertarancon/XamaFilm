@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.Templates.DetailTemplate">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout BackgroundColor="{Binding Item.ImdbRating, Converter={StaticResource RatingToColorConverter}}" Padding="5">
+                <Image Source="{Binding Item.Poster}" HorizontalOptions="FillAndExpand"/>
+
+                <Label Style="{StaticResource SubTitleGrayLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Item.Rated}"/>
+                            <Span Text=" * "/>
+                            <Span Text="{Binding Item.Released}"/>
+                            <Span Text=" * "/>
+                            <Span Text="{Binding Item.Runtime}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding Item.Title}" Style="{StaticResource TitleWhiteLabelStyle}"/>
+                <Label Text="{Binding Item.Genre}" Style="{StaticResource SubTitleWhiteLabelStyle}"/>
+            </StackLayout>
+
+            <Label Margin="5" Text="{Binding Item.Plot}" LineBreakMode="WordWrap"/>
+
+            <StackLayout BackgroundColor="{StaticResource LightGrayColor}" Padding="5">
+                <Label Text="Facts" Style="{StaticResource TitleDarkGrayLabelStyle}" Margin="0,5"/>
+
+                <Label Text="Original Title" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Title}"/>
+
+                <Label Text="Director" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Director}"/>
+
+                <Label Text="Writer" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Writer}"/>
+
+                <Label Text="Actors" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Actors}"/>
+
+                <Label Text="Language" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Language}"/>
+
+                <Label Text="Country" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Country}"/>
+
+                <Label Text="Awards" Style="{StaticResource SubTitleBlackLabelStyle}"/>
+                <Label Text="{Binding Item.Awards}"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentView>

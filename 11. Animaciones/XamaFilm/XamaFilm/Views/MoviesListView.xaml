@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.MoviesListView"
+             xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+             xmlns:behavior="clr-namespace:XamaFilm.Behaviors"
+             Title="Movies" Icon="Movie.png">
+    
+    <ListView ItemsSource="{Binding Movies}" HasUnevenRows="True"
+              behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding MovieItemSelectedCommand}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <templates:MovieItemTemplate/>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

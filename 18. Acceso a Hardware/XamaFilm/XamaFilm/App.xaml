@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.App"
+             xmlns:converters="clr-namespace:XamaFilm.Converters">
+	<Application.Resources>
+        <converters:RatingToColorConverter x:Key="RatingToColorConverter"/>
+        <converters:MenuImageToSourceConverter x:Key="MenuImageToSourceConverter"/>
+
+        <Color x:Key="AccentColor">#1486cb</Color>
+        <Color x:Key="AlmostBlackColor">#333333</Color>
+        <Color x:Key="AlmostWhiteColor">#fafafa</Color>
+
+        <Color x:Key="LightGrayColor">#e7eaec</Color>
+        <Color x:Key="GrayColor">#676a6c</Color>
+        <Color x:Key="DarkGrayColor">#484f63</Color>
+
+        <Style x:Key="BaseLabelStyle" TargetType="{x:Type Label}" >
+            <Setter Property="TextColor"
+                    Value="{StaticResource AlmostBlackColor}" />
+        </Style>
+
+        <Style x:Key="TitleWhiteLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="TextColor" Value="{StaticResource AlmostWhiteColor}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="TitleDarkGrayLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="TextColor" Value="{StaticResource DarkGrayColor}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="SubTitleWhiteLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="{StaticResource AlmostWhiteColor}"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="SubTitleGrayLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="{StaticResource LightGrayColor}"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="SubTitleBlackLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="{StaticResource AlmostBlackColor}"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        </Style>
+
+        <Style x:Key="DarkGrayLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="TextColor" Value="{StaticResource DarkGrayColor}"/>
+        </Style>
+
+        <Style x:Key="SmallWhiteLabelStyle" BasedOn="{StaticResource BaseLabelStyle}" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="{StaticResource AlmostWhiteColor}"/>
+        </Style>
+    </Application.Resources>
+</Application>

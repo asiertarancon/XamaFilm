@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.MenuView"
+             xmlns:behaviors="clr-namespace:XamaFilm.Behaviors"
+             xmlns:templates="clr-namespace:XamaFilm.Views.Templates"
+             xmlns:i18n="clr-namespace:XamaFilm.Strings"
+             xmlns:controls="clr-namespace:XamaFilm.Controls"
+             Title="{i18n:Translate Menu}">
+    <StackLayout>
+        <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}"
+              behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding ItemSelectedCommand}">
+            <ListView.Header>
+                <Grid BackgroundColor="#03A9F4" RowSpacing="5" Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="XamaFilm.png" HorizontalOptions="Center"/>
+                    
+                    <Label Text="XamaFilm"
+                           Grid.Row="1"
+                           FontSize="Large"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"/>
+
+                    <controls:HyperLinkControl Grid.Row="2" TextColor="White" HorizontalTextAlignment="Center" Text="www.xamaFilm.com" NavigateUri="http://www.xamaFilm.com"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:MenuItemTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
