@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamaFilm.Views.SettingsView"
+             xmlns:i18n="clr-namespace:XamaFilm.Strings"
+             Title="{i18n:Translate Settings}">
+    <TableView>
+        <TableRoot>
+            <TableSection Title="{i18n:Translate Settings}">
+                <SwitchCell Text="{i18n:Translate ReceiveNotifications}"/>
+            </TableSection>
+
+            <TableSection Title="{i18n:Translate About}">
+                <TextCell Text="{i18n:Translate Acknowledgment}" Command="{Binding NavigateToAcknowledgmentCommand}"/>
+                <TextCell Text="{i18n:Translate AboutUs}" Command="{Binding NavigateToAboutUsCommand}" />
+                <TextCell Text="{i18n:Translate Privacy}" Command="{Binding NavigateToPrivacyCommand}" />
+                <TextCell Text="{i18n:Translate Version}" Detail="{Binding Version}"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
